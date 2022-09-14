@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  database:
+    image: postgres:11-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: crud-scd
+      POSTGRES_USER: crud-scd
+      POSTGRES_PASSWORD: crud-scd
+    volumes:
+      - database-data:/var/lib/postgresql/data
+
+volumes:
+  database-data:
+    driver: "local"
